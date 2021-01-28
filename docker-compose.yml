@@ -9,4 +9,4 @@ services:
     volumes:
     - ./data/:/var/lib/grafana
     - ./custom-files/:/usr/share/grafana/public/views
-#    - ./config/grafana.ini:/etc/grafana/grafana.ini
+    - ./config/grafana.ini:/etc/grafana/grafana.ini
