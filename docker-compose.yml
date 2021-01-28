@@ -8,5 +8,4 @@ services:
       - 3000:3000
     volumes:
     - ./data/:/var/lib/grafana
-    - ./custom-files/:/usr/share/grafana/public/views
     - ./config/grafana.ini:/etc/grafana/grafana.ini
