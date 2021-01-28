@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  grafana:
+    image: grafana/grafana:7.3.7
+    container_name: grafana
+    ports:
+      - 3000:3000
+    volumes:
+    - ./data/:/var/lib/grafana
+    - ./custom-files/:/usr/share/grafana/public/views
+#    - ./config/grafana.ini:/etc/grafana/grafana.ini
