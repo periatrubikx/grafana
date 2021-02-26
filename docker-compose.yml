@@ -9,3 +9,9 @@ services:
     volumes:
     - ./data/:/var/lib/grafana
     - ./config/grafana.ini:/etc/grafana/grafana.ini
+    - ./custom-files/:/usr/share/grafana/public/views/
+
+networks:
+  default:
+    external:
+      name: rubikx-iot-nw
