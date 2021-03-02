@@ -2,14 +2,21 @@ version: "3.8"
 
 services:
   grafana:
-    image: grafana/grafana:7.3.7
+    image: grafana/grafana:6.7.3-ubuntu
     container_name: grafana
     ports:
       - 3000:3000
     volumes:
     - ./data/:/var/lib/grafana
     - ./config/grafana.ini:/etc/grafana/grafana.ini
-    - ./custom-files/:/usr/share/grafana/public/views/
+    - ./img/grafana_icon.svg:/usr/share/grafana/public/img/grafana_icon.svg
+    - ./img/grafana_icon.svg:/usr/share/grafana/public/img/grafana_type_logo.svg
+    - ./img/RubikX_logo_icon.png:/usr/share/grafana/public/img/grafana-logo-wordmark
+    - ./custom-files/index.html:/usr/share/grafana/public/views/index.html
+#    - ./custom-files/app.67951dc7df0e9bfd5186.js:/usr/share/grafana/public/build/app.67951dc7df0e9bfd5186.js
+#    - ./custom-files/DashboardPage.67951dc7df0e9bfd5186.js:/usr/share/grafana/public/build/DashboardPage.67951dc7df0e9bfd5186.js
+    - ./custom-files/grafana.dark.67951dc7df0e9bfd5186.css:/usr/share/grafana/public/build/grafana.dark.67951dc7df0e9bfd5186.css
+    - ./custom-files/grafana.light.67951dc7df0e9bfd5186.css:/usr/share/grafana/public/build/grafana.light.67951dc7df0e9bfd5186.css
 
 networks:
   default:
